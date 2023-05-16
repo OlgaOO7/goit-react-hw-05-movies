@@ -1,7 +1,8 @@
 // import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { fetchMovieReview } from "../api/api";
+import { fetchMovieReview } from "../../api/api";
+import css from "./Reviews.module.css";
 
 // axios.defaults.baseURL = 'https://api.themoviedb.org/3';
 // const API_KEY = 'a4cd0ac584d8e9d66ad0a8071503e9b2';
@@ -31,14 +32,14 @@ const Reviews = () => {
   }, [movieId]);
 
   return (
-    <ul>
+    <ul className={css.reviewList}>
       {!review.length ? (
         <p>No availbale reviews</p>
       ) : (
         review.map(({ id, author, content }) => (
-          <li key={id}>
-            <h3>Author: {author}</h3>
-            <p>{content}</p>
+          <li key={id} className={css.reviewItem}>
+            <h3 className={css.reviewAuthor}>{author}</h3>
+            <p className={css.content}>{content}</p>
           </li>
         ))
       )}

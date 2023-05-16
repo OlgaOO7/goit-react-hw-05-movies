@@ -84,24 +84,31 @@ const MovieDetails = () => {
         </div>
         <div className={css.movieInfoDetails}>
           <h3 className={css.movieSubtitle}>Movie info</h3>
-          <p>Popularity: {popularity}</p>
-          <p>Release date: {release_date}</p>
+          <p className={css.infoTtext}>Popularity: {popularity}</p>
+          <p className={css.infoTtext}>Release date: {release_date}</p>
           <h3 className={css.movieSubtitle}>Overview</h3>
-          <p>{overview}</p>
+          <p className={css.infoTtext}>{overview}</p>
           <h3 className={css.movieSubtitle}>Genres</h3>
-          <p>{genres}</p>
+          <p className={css.infoTtext}>{genres}</p>
         </div>
       </div>
 
-      <h3 className={css.movieSubtitle}>Additional information</h3>
-      <ul className={css.navLinkList}>
-        <li>
-          <Link to="cast" className={css.navlinkInfo}>Cast</Link>
-        </li>
-        <li>
-          <Link to="reviews" className={css.navlinkInfo}>Reviews</Link>
-        </li>
-      </ul>
+      <div className={css.additInfowrapper}>
+        <h3 className={css.movieSubtitle}>Additional information</h3>
+        <ul className={css.navLinkList}>
+          <li className={css.navListItem}>
+            <Link to="cast" className={css.navlinkInfo}>
+              Cast
+            </Link>
+          </li>
+          <li className={css.navListItem}>
+            <Link to="reviews" className={css.navlinkInfo}>
+              Reviews
+            </Link>
+          </li>
+        </ul>
+      </div>
+
       <Outlet />
     </>
   );

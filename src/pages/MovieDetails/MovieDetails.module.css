@@ -5,18 +5,11 @@
   font-weight: 700;
   text-shadow: 1px 0 10px #00ff87;
 }
-  
+
 .navLinkBack {
   display: flex;
   align-items: center;
   gap: 4px;
-  text-decoration: none;
-  font-size: 20px;
-  color: #60efff;
-  text-shadow: 1px 0 10px #00ff87;
-}
-
-.navlinkInfo {
   text-decoration: none;
   font-size: 20px;
   color: #60efff;
@@ -42,21 +35,62 @@
   justify-content: center;
 }
 
+.infoTtext {
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 0.8 px;
+}
+
 .movieInfoDetails {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  padding-right: 5px;
   gap: 24px;
 }
 
 .movieSubtitle {
+  margin-top: 40px;
   color: #fff;
+  text-shadow: 1px 0 10px #60efff;
+  font-size: 20px;
+  letter-spacing: 0.5px;
 }
 
-.navLinkList {
+.additInfowrapper {
   display: flex;
   flex-direction: column;
 }
 
-p {
-  color: #fff;
+.additInfowrapper .movieSubtitle {
+  text-align: center;
+}
+
+.navLinkList {
+  display: flex;
+  margin-top: 30px;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+}
+
+.navListItem {
+  padding: 10px;
+}
+
+.navlinkInfo {
+  text-decoration: none;
+  font-size: 20px;
+  color: #60efff;
+  text-shadow: 1px 0 10px #00ff87;
+}
+
+
+.navlinkInfo:hover {
+  position: relative;
+  color: #00ff87;
+  filter: blur(2px) cotrast(4);
+  transition-duration: 1s;
+  text-decoration: underline;
+  text-shadow: 1px 0 10px #60efff;
 }

@@ -6,7 +6,7 @@ import Home from '../pages/Home/Home';
 import Movies from 'pages/Movie/Movies';
 import MovieDetails from 'pages/MovieDetails/MovieDetails';
 import Layout from './Layout/Layout';
-import Reviews from './Reviews';
+import Reviews from './Reviews/Reviews';
 import Cast from './Cast/Cast';
 // import Home from "path/to/pages/Home";
 // import NotFound from "path/to/pages/NotFound";

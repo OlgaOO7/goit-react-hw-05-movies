@@ -1,0 +1,27 @@
+.reviewList {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 5px ;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.reviewItem {
+  margin-bottom: 20px;
+  padding: 5px 10px;
+  /* border: 2px solid #fff; */
+  border-radius: 4px;
+  box-shadow: 5px 2px 2px #60efff;
+}
+
+.content {
+  margin-bottom: 8px;
+  color: #fff;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+}
+
+.reviewAuthor {
+  color: #fff;
+  text-shadow: 2px 2px 4px #000000;
+}

@@ -67,11 +67,12 @@ const Home = () => {
               src={
                 poster_path
                   ? `https://image.tmdb.org/t/p/w500/${poster_path}`
-                  : '../../images/poster_not_available.png'
+                  : 'https://skydomepictures.com/wp-content/uploads/2018/08/movie-poster-coming-soon-2.png'
               }
               alt={title}
+              className={css.posterImg}
             />
-              <h2>{title}</h2>
+              <h2 className={css.movieTitle}>{title}</h2>
             </Link>
           </li>
         ))}

@@ -61,7 +61,7 @@ const Movies = () => {
 
   const handleFormSubmit = searchQuery => {
     setSearchQuery(searchQuery);
-    setSearchParams(searchQuery);
+    setSearchParams({query: searchQuery});
   };
 
   //   //   useEffect(() =>{
@@ -107,9 +107,10 @@ const Movies = () => {
                   src={
                     movie.poster_path
                       ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
-                      : '../images/poster_not_available.png'
+                      : 'https://skydomepictures.com/wp-content/uploads/2018/08/movie-poster-coming-soon-2.png'
                   }
                   alt={movie.title}
+                  className={css.moviePoster}
                 />
                 <h2 className={css.movieTitle}>{movie.title}</h2>
               </Link>

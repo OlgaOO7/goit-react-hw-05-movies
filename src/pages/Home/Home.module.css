@@ -1,16 +1,21 @@
 .homeTitle {
-  margin-top: 60px;
+  margin-top: 70px;
   text-align: center;
   color: #60efff;
   text-shadow: 1px 0 10px #00ff87;
   font-size: 50px;
+  letter-spacing: 1.6px;
 }
 
 .trandingMovieList {
-  display: grid;
+  /* display: grid;
   max-width: calc(100vw - 48px);
   grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
-  grid-gap: 16px;
+  grid-gap: 16px; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
   margin-top: 60px;
   margin-bottom: 0;
   padding: 0;
@@ -20,11 +25,24 @@
 }
 
 .trandingMovieItem {
-color: aliceblue;
+  margin-bottom: 40px;
+}
+
+.trandingMovieItem:hover {
+  transform: scale(1.03);
+}
+
+.posterImg {
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.movieTitle {
+  margin-top: 15px;;
+  color: #fff;
 }
 
 .trandMovieNav {
-  color: aliceblue;
   text-decoration: none;
   font-size: 15px;
   white-space: nowrap;
