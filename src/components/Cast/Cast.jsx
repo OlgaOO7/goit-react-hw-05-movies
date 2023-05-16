@@ -2,7 +2,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMovieCast } from "../../api/api";
-import css from "./Cast.module.css";
 
 // axios.defaults.baseURL = 'https://api.themoviedb.org/3';
 
@@ -36,7 +35,7 @@ const Cast = () => {
 
   return (
     <>
-      <ul className={css.castList}>
+      <ul>
         {!cast.length ? (
           <p>Sorry, no information.</p>
         ) : (
@@ -47,7 +46,7 @@ const Cast = () => {
                 alt={name}
                 width="160"
               />
-              <p className={css.characterName}>{name}</p>
+              <p>{name}</p>
               <p>Character: {character}</p>
             </li>
           ))
