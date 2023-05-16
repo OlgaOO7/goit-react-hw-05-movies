@@ -47,7 +47,7 @@ const Cast = () => {
                 alt={name}
                 width="160"
               />
-              <p>{name}</p>
+              <p className={css.characterName}>{name}</p>
               <p>Character: {character}</p>
             </li>
           ))
