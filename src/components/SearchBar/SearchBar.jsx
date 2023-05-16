@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
-import css from "./SearchBar.module.css";
+// import css from "./SearchBar.module.css";
 
 const SearchBar = ({onSubmit}) => {
   const [searchQuery, setSearchQuery] = useState("");

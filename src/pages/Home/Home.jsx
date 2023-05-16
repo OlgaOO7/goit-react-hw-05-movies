@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Loader from '../../components/Loader/Loader';
 import { fetchTrandingMovies } from '../../api/api';
-import css from './Home.module.css';
+// import css from './Home.module.css';
 
 // axios.defaults.baseURL = 'https://api.themoviedb.org/3';
 // const API_KEY = 'a4cd0ac584d8e9d66ad0a8071503e9b2';
