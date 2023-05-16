@@ -2,7 +2,7 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import css from "./Layout.module.css";
 
-export const Layout = () => {
+const Layout = () => {
   return (
     <>
       <header className={css.header}>
@@ -26,3 +26,5 @@ export const Layout = () => {
     </>
   );
 };
+
+export default Layout;

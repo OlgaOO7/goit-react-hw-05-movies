@@ -8,7 +8,7 @@ import { fetchMovieReview } from "../api/api";
 
 // https://api.themoviedb.org/3/movie/{movie_id}/reviews?api_key=<<api_key>>&language=en-US&page=1
 
-export const Reviews = () => {
+const Reviews = () => {
   const { movieId } = useParams();
   const [review, setReview] = useState([]);
   // http://localhost:3001/movies/movie-1/reviews
@@ -49,4 +49,4 @@ export const Reviews = () => {
   );
 };
 
-// export default Reviews;
+export default Reviews;

@@ -7,7 +7,7 @@ import css from "./Cast.module.css";
 // axios.defaults.baseURL = 'https://api.themoviedb.org/3';
 // const API_KEY = 'a4cd0ac584d8e9d66ad0a8071503e9b2';
 
-export const Cast = () => {
+const Cast = () => {
   const { movieId } = useParams();
   const [cast, setCast] = useState([]);
   // http://localhost:3001/movies/movie-1/cast
@@ -58,4 +58,4 @@ export const Cast = () => {
   );
 };
 
-// export default Cast;
+export default Cast;
