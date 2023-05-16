@@ -16,7 +16,7 @@ export const Layout = () => {
         </ul>
       </header>
 
-      <main>
+      <main className={css.mainWrapper}>
         {/* <Suspense fallback={<div>Loading...</div>}> */}
           <Outlet />
         {/* </Suspense> */}

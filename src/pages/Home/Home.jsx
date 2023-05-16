@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Loader from '../../components/Loader/Loader';
 import { fetchTrandingMovies } from '../../api/api';
-// import css from './Home.module.css';
+import css from './Home.module.css';
 
 // axios.defaults.baseURL = 'https://api.themoviedb.org/3';
 // const API_KEY = 'a4cd0ac584d8e9d66ad0a8071503e9b2';
@@ -29,7 +29,7 @@ const Home = () => {
         // const response = await fetchTrandingMovies();
         // const results = response.data.results;
         // console.log(response.data.results);
-        // console.log(results);
+        console.log(results);
         const trandingMovie = results.map(({ id, title, poster_path }) => ({
           id,
           title,
@@ -57,11 +57,12 @@ const Home = () => {
 
   return (
     <>
-      <h1>Tranding films</h1>
+      <h1 className={css.homeTitle}>Tranding films</h1>
       {isLoading && <Loader />}
-      <ul>
+      <ul className={css.trandingMovieList}>
         {trandingFilms.map(({ id, title, poster_path }) => (
-          <li key={id}>
+          <li key={id} className={css.trandingMovieItem}>
+            <Link to={`/movies/${id}`} state={{ from: location }} className={css.trandMovieNav}>
             <img
               src={
                 poster_path
@@ -70,8 +71,7 @@ const Home = () => {
               }
               alt={title}
             />
-            <Link to={`/movies/${id}`} state={{ from: location }}>
-              {title}
+              <h2>{title}</h2>
             </Link>
           </li>
         ))}

@@ -1,11 +1,13 @@
 // import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { ArrowLeftIcon } from '@radix-ui/react-icons';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
-import { fetchMovieInfo } from '../api/api';
+import { fetchMovieInfo } from '../../api/api';
 import Loader from 'components/Loader/Loader';
+import css from './MovieDetails.module.css';
 
 // axios.defaults.baseURL = 'https://api.themoviedb.org/3';
 // const API_KEY = 'a4cd0ac584d8e9d66ad0a8071503e9b2';
@@ -62,35 +64,42 @@ const MovieDetails = () => {
 
   return (
     <>
-      <h1>MovieDetails {movieId}</h1>
-      <Link to={backLinkLocationRef.current}>Go back</Link>
+      <Link to={backLinkLocationRef.current} className={css.navLinkBack}>
+        <ArrowLeftIcon className={css.arrowIcon} />
+        Go back
+      </Link>
       {isLoading && <Loader />}
-      <div>
-        <img
-          src={
-            poster_path
-              ? `https://image.tmdb.org/t/p/w500/${poster_path}`
-              : '../images/poster_not_available.png'
-          }
-          alt={title}
-        />
+      <h1 className={css.movieTitle}>{title}</h1>
+      <div className={css.infoMovieWrapper}>
+        <div className={css.posterWrapper}>
+          <img
+            src={
+              poster_path
+                ? `https://image.tmdb.org/t/p/w500/${poster_path}`
+                : '../images/poster_not_available.png'
+            }
+            alt={title}
+            width="480"
+          />
+        </div>
+        <div className={css.movieInfoDetails}>
+          <h3 className={css.movieSubtitle}>Movie info</h3>
+          <p>Popularity: {popularity}</p>
+          <p>Release date: {release_date}</p>
+          <h3 className={css.movieSubtitle}>Overview</h3>
+          <p>{overview}</p>
+          <h3 className={css.movieSubtitle}>Genres</h3>
+          <p>{genres}</p>
+        </div>
       </div>
-      <div>
-        <h2>{title}</h2>
-        <p>Popularity: {popularity}</p>
-        <p>Release date: {release_date}</p>
-        <h3>Overview</h3>
-        <p>{overview}</p>
-        <h3>Genres</h3>
-        <p>{genres}</p>
-      </div>
-      <h3>Additional information</h3>
-      <ul>
+
+      <h3 className={css.movieSubtitle}>Additional information</h3>
+      <ul className={css.navLinkList}>
         <li>
-          <Link to="cast">Cast</Link>
+          <Link to="cast" className={css.navlinkInfo}>Cast</Link>
         </li>
         <li>
-          <Link to="reviews">Reviews</Link>
+          <Link to="reviews" className={css.navlinkInfo}>Reviews</Link>
         </li>
       </ul>
       <Outlet />

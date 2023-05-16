@@ -3,9 +3,10 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
-import Loader from "../components/Loader/Loader";
-import { fetchSearchMovie } from "../api/api";
-import SearchBar from '../components/SearchBar/SearchBar';
+import Loader from '../../components/Loader/Loader';
+import { fetchSearchMovie } from '../../api/api';
+import SearchBar from '../../components/SearchBar/SearchBar';
+import css from './Movie.module.css';
 // import SearchedMovieList from '../components/SearchedMovieList';
 
 // axios.defaults.baseURL = 'https://api.themoviedb.org/3';
@@ -97,10 +98,11 @@ const Movies = () => {
     <div>
       <SearchBar onSubmit={handleFormSubmit} />
       {isLoading && <Loader />}
-        {movieBySearch &&
-          (<ul>
-            {movieBySearch.map(movie => (
-              <li key={movie.id}>
+      {movieBySearch && (
+        <ul className={css.movieList}>
+          {movieBySearch.map(movie => (
+            <li key={movie.id}>
+              <Link to={`/movies/${movie.id}`} state={{ from: location }} className={css.movieNav}>
                 <img
                   src={
                     movie.poster_path
@@ -109,12 +111,12 @@ const Movies = () => {
                   }
                   alt={movie.title}
                 />
-                <Link to={`/movies/${movie.id}`} state={{ from: location }}>
-                  {movie.title}
-                </Link>
-              </li>
-            ))}
-          </ul>)}
+                <h2 className={css.movieTitle}>{movie.title}</h2>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
 
       {/* <input
         type="text"
