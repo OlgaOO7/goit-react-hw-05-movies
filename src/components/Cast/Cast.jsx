@@ -38,7 +38,7 @@ const Cast = () => {
     <>
       <ul className={css.castList}>
         {!cast.length ? (
-          <p>Sorry, no information.</p>
+          <p className={css.infoText}>Sorry, no information.</p>
         ) : (
           cast.map(({ character, name, id, profile_path }) => (
             <li key={id} className={css.castItem}>
