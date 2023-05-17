@@ -1,19 +1,19 @@
-// import { lazy, Suspense } from "react";
+import { lazy} from "react";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Routes, Route } from 'react-router-dom';
-import Home from '../pages/Home/Home';
-import Movies from 'pages/Movie/Movies';
-import MovieDetails from 'pages/MovieDetails/MovieDetails';
+// import Home from '../pages/Home/Home';
+// import Movies from 'pages/Movie/Movies';
+// import MovieDetails from 'pages/MovieDetails/MovieDetails';
 import Layout from './Layout/Layout';
-import Reviews from './Reviews/Reviews';
-import Cast from './Cast/Cast';
-// import Home from "path/to/pages/Home";
-// import NotFound from "path/to/pages/NotFound";
+// import Reviews from './Reviews/Reviews';
+// import Cast from './Cast/Cast';
 
-// const Home = lazy(() => import("../pages/Home"));
-// const Movies = lazy(() => import("../pages/MovieDetails"));
-// const MovieDetails = lazy(() => import("../pages/MovieDetails"));
+const Home = lazy(() => import("../pages/Home/Home"));
+const Movies = lazy(() => import("../pages/Movies/Movies"));
+const MovieDetails = lazy(() => import("../pages/MovieDetails/MovieDetails"));
+const Cast = lazy(() =>  import("../components/Cast/Cast"));
+const Reviews = lazy (() => import("../components/Reviews/Reviews"));
 
 export const App = () => {
   return (

@@ -1,4 +1,4 @@
-// import { Suspense } from 'react';
+import { Suspense } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import css from "./Layout.module.css";
 
@@ -17,9 +17,9 @@ const Layout = () => {
       </header>
 
       <main className={css.mainWrapper}>
-        {/* <Suspense fallback={<div>Loading...</div>}> */}
+        <Suspense fallback={<div>Loading...</div>}>
           <Outlet />
-        {/* </Suspense> */}
+        </Suspense>
       </main>
 
       <footer></footer>

@@ -1,4 +1,3 @@
-// import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState, useEffect } from 'react';
@@ -6,13 +5,6 @@ import { Link, useLocation } from 'react-router-dom';
 import Loader from '../../components/Loader/Loader';
 import { fetchTrandingMovies } from '../../api/api';
 import css from './Home.module.css';
-
-// axios.defaults.baseURL = 'https://api.themoviedb.org/3';
-// const API_KEY = 'a4cd0ac584d8e9d66ad0a8071503e9b2';
-
-// const getTrandingMovies = async () => {
-//   const data = await axios.get(`/3/trending/all/day?api_key=${API_KEY}`)
-// }
 
 const Home = () => {
   const [trandingFilms, setTrandingFilms] = useState([]);
@@ -26,9 +18,6 @@ const Home = () => {
         const {
           data: { results },
         } = await fetchTrandingMovies();
-        // const response = await fetchTrandingMovies();
-        // const results = response.data.results;
-        // console.log(response.data.results);
         console.log(results);
         const trandingMovie = results.map(({ id, title, poster_path }) => ({
           id,

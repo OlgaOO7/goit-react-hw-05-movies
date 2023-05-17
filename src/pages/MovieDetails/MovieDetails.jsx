@@ -1,35 +1,24 @@
-// import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ArrowLeftIcon } from '@radix-ui/react-icons';
 import { Link, Outlet, useLocation } from 'react-router-dom';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, Suspense } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMovieInfo } from '../../api/api';
 import Loader from 'components/Loader/Loader';
 import css from './MovieDetails.module.css';
 
-// axios.defaults.baseURL = 'https://api.themoviedb.org/3';
-// const API_KEY = 'a4cd0ac584d8e9d66ad0a8071503e9b2';
-
 const MovieDetails = () => {
   const [currentMovie, setCurrentMovie] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const { movieId } = useParams();
-  // console.log(movieId);
   const location = useLocation();
-  // console.log(location);
   const backLinkLocationRef = useRef(location.state?.from ?? '/');
-  // console.log(backLinkLocationRef);
 
   useEffect(() => {
     setIsLoading(true);
     const getMovieInfo = async () => {
       try {
-        // const response = await axios.get(`/movie/${movieId}?api_key=${API_KEY}&language=en-US`);
-        // console.log(response);
-        // const result = response.data;
-        // console.log(result);
         const response = await fetchMovieInfo(movieId);
         console.log(response);
         const result = response.data;
@@ -108,8 +97,9 @@ const MovieDetails = () => {
           </li>
         </ul>
       </div>
-
-      <Outlet />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };

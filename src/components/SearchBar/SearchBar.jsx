@@ -16,7 +16,7 @@ const SearchBar = ({ onSubmit }) => {
       });
     }
     onSubmit(searchQuery.trim());
-    // setSearchQuery("");
+    setSearchQuery("");
   };
 
   const handleSearchChange = e => {

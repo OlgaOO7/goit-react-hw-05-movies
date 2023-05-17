@@ -37,7 +37,8 @@ align-items: center;
 }
 
 .castImg {
-  height: 240px;
+  height: 100%;
+  max-width: 100%;
   object-fit: cover;
   border-radius: 8px;
 }
